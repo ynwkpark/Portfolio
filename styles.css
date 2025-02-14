@@ -1,0 +1,141 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* General body styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Horizontal Navbar with Gradient */
+.navbar {
+    width: 100%;
+    height: 150px; /* Increased height */
+    background: linear-gradient(to right, #13294B, #8B2F1F, #E84A27); /* UIUC-inspired gradient */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Left Section (Logo + Name) */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar-name p {
+    font-size: 1em;
+    color: white;
+    margin: 0;
+    padding-top: 3px;
+    opacity: 0.8; /* Slight transparency for subtitle */
+}
+
+/* Logo */
+.logo img {
+    width: 80px; /* Increased logo size */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+/* Icons */
+.social-links a img {
+    height: 30px;
+    width: auto; /* Adjust icon size */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links a img:hover {
+    transform: scale(1.2);
+}
+
+/* Name (Yon Park) */
+.navbar h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    color: white;
+}
+
+/* Navigation Menu */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.navbar ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 14px 24px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Content area */
+.content {
+    padding-top: 170px; /* Prevents content from being hidden behind navbar */
+}
+
+/* Sections */
+.section {
+    height: 100vh; /* Full-screen sections */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition: background 0.5s ease-in-out;
+    text-align: center;
+}
+
+/* Section Colors */
+#home { background: #fff; }
+#projects { background: #f8f9fa; }
+#resume { background: #e9ecef; }
+#contact { background: #dee2e6; }
+
+/* Scroll-trigger effect */
+.section.active {
+    background: #E84A27; /* Change background color on scroll */
+    color: white;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
