@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,3 +72,78 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yon Park - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Horizontal Navbar with Gradient -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <img src="img/UIUC-logo.gif" alt="Illinois Logo">
+            </div>
+            <div class="navbar-name">
+                <h1>Yeonwook Park</h1>
+                <p>UIUC Mechanical Engineering '25</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">
+                        <img src="img/linkedin-icon.png" alt="LinkedIn">
+                    </a>
+                    <a href="mailto:your.email@example.com">
+                        <img src="img/email-icon.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <section id="home" class="section">
+            <h2>Home</h2>
+            <p>Welcome to my portfolio! Scroll down to explore my projects and experience.</p>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <p>Here are some of my key engineering and design projects.</p>
+        </section>
+        <section id="resume" class="section">
+            <h2>Resume</h2>
+            <p>Download my resume and view my skills and experience.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Feel free to reach out via email or LinkedIn!</p>
+        </section>
+    </div>
+
+    <!-- JavaScript for Scroll Trigger -->
+    <script>
+        document.addEventListener("scroll", () => {
+            document.querySelectorAll(".section").forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    section.classList.add("active");
+                } else {
+                    section.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+>>>>>>> e5adf3b (message)
