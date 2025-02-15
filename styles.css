@@ -1,285 +1,165 @@
-<<<<<<< HEAD
-/* Reset styles */
-* {
+/* Reset default margins & paddings */
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: black;
+    color: white;
     scroll-behavior: smooth;
 }
 
-/* General body styles */
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-}
-
-/* Horizontal Navbar with Gradient */
+/* Navbar container */
 .navbar {
     width: 100%;
-    height: 150px; /* Increased height */
-    background: linear-gradient(to right, #13294B, #8B2F1F, #E84A27); /* UIUC-inspired gradient */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 4px solid white;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
     z-index: 1000;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Left Section (Logo + Name) */
+/* Scroll container */
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Section styling with smooth overlay effect */
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Bring section to top when visible */
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section background colors */
+#home {
+    background: #13294B;
+}
+
+#portfolio {
+    background: #8B2F1F;
+}
+
+#resume {
+    background: #E84A27;
+}
+
+#contact {
+    background: #1E1E1E;
+}
+
+/* Left section: UIUC logo + text */
 .navbar-left {
     display: flex;
     align-items: center;
 }
 
-.navbar-name {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.navbar-name p {
-    font-size: 1em;
-    color: white;
-    margin: 0;
-    padding-top: 3px;
-    opacity: 0.8; /* Slight transparency for subtitle */
-}
-
-/* Logo */
-.logo img {
-    width: 80px; /* Increased logo size */
-    height: auto;
-    border-radius: 5px;
+/* UIUC Logo */
+.uiuc-logo {
+    height: 80px;
     margin-right: 15px;
 }
 
-.social-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 5px;
-}
-
-/* Icons */
-.social-links a img {
-    height: 30px;
-    width: auto; /* Adjust icon size */
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-links a img:hover {
-    transform: scale(1.2);
-}
-
-/* Name (Yon Park) */
-.navbar h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2em;
-    color: white;
-}
-
-/* Navigation Menu */
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    position: relative;
-}
-
-.navbar ul li {
-    display: inline-block;
-    position: relative;
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 500;
-    padding: 14px 24px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    position: relative;
-    transition: 0.3s ease-in-out;
-}
-
-.navbar ul li a:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05);
-}
-
-/* Content area */
-.content {
-    padding-top: 170px; /* Prevents content from being hidden behind navbar */
-}
-
-/* Sections */
-.section {
-    height: 100vh; /* Full-screen sections */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    transition: background 0.5s ease-in-out;
-    text-align: center;
-}
-
-/* Section Colors */
-#home { background: #fff; }
-#projects { background: #f8f9fa; }
-#resume { background: #e9ecef; }
-#contact { background: #dee2e6; }
-
-/* Scroll-trigger effect */
-.section.active {
-    background: #E84A27; /* Change background color on scroll */
-    color: white;
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-=======
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-/* General body styles */
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-}
-
-/* Horizontal Navbar with Gradient */
-.navbar {
-    width: 100%;
-    height: 150px; /* Increased height */
-    background: linear-gradient(to right, #13294B, #8B2F1F, #E84A27); /* UIUC-inspired gradient */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-/* Left Section (Logo + Name) */
-.navbar-left {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-name {
+/* Name and Links container */
+.name-links {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-.navbar-name p {
-    font-size: 1em;
     color: white;
-    margin: 0;
-    padding-top: 3px;
-    opacity: 0.8; /* Slight transparency for subtitle */
+    font-size: 18px;
+    gap: 5px;
 }
 
-/* Logo */
-.logo img {
-    width: 80px; /* Increased logo size */
-    height: auto;
-    border-radius: 5px;
-    margin-right: 15px;
+/* Hovering behavior for LinkedIn and Email buttons */
+.name-links a:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 8px white);
 }
 
-.social-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 5px;
+/* Name Styling in navbar */
+.name-links span:first-child {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
 }
 
-/* Icons */
-.social-links a img {
+/* LinkedIn & Email icons */
+.name-links a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.name-links a img {
     height: 30px;
-    width: auto; /* Adjust icon size */
+    vertical-align: middle;
     transition: transform 0.3s ease-in-out;
 }
 
-.social-links a img:hover {
-    transform: scale(1.2);
-}
-
-/* Name (Yon Park) */
-.navbar h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2em;
-    color: white;
-}
-
-/* Navigation Menu */
-.navbar ul {
-    list-style: none;
+/* Right section: Navigation buttons */
+.navbar-right {
     display: flex;
     gap: 20px;
-    position: relative;
 }
 
-.navbar ul li {
-    display: inline-block;
-    position: relative;
-}
-
-.navbar ul li a {
+/* Navbar buttons */
+.nav-button {
+    background: transparent;
     color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 500;
-    padding: 14px 24px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    position: relative;
-    transition: 0.3s ease-in-out;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.navbar ul li a:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05);
+/* Hover effect */
+.nav-button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
 }
 
-/* Content area */
-.content {
-    padding-top: 170px; /* Prevents content from being hidden behind navbar */
-}
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
 
-/* Sections */
-.section {
-    height: 100vh; /* Full-screen sections */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    transition: background 0.5s ease-in-out;
-    text-align: center;
-}
+    .navbar-left, .navbar-right {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-/* Section Colors */
-#home { background: #fff; }
-#projects { background: #f8f9fa; }
-#resume { background: #e9ecef; }
-#contact { background: #dee2e6; }
-
-/* Scroll-trigger effect */
-.section.active {
-    background: #E84A27; /* Change background color on scroll */
-    color: white;
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    .nav-button {
+        width: 100%;
+        font-size: 16px;
+    }
 }
->>>>>>> e5adf3b (message)
