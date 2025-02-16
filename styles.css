@@ -352,7 +352,7 @@ body, html {
 
 /* Projects Section */
 #projects {
-    background: #1E1E1E;
+    background: linear-gradient(to right, #1a1a1a, #4d4d4d);
     padding-top: 20px; /* Reduced padding to bring content closer to the buttons */
     padding-bottom: 20px;
     text-align: center;
