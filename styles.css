@@ -10,7 +10,7 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* Navbar container */
+/* Navbar */
 .navbar {
     width: 100%;
     height: 100px;
@@ -28,14 +28,74 @@ body, html {
     transition: background 0.3s ease-in-out;
 }
 
-/* Scroll container */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.uiuc-logo {
+    height: 60px;
+}
+
+.name-links {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    gap: 5px;
+}
+
+.name-links span:first-child {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.name-links div {
+    display: flex;
+    gap: 10px;
+}
+
+.name-links a img {
+    height: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.name-links a:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 6px white);
+}
+
+.navbar-right {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    background: transparent;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Sections */
 .scroll-container {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* Section styling with smooth overlay effect */
 .section {
     position: relative;
     width: 100%;
@@ -48,102 +108,352 @@ body, html {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Bring section to top when visible */
 .section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Section background colors */
 #home {
-    background: #13294B;
-}
-
-#portfolio {
-    background: #8B2F1F;
-}
-
-#resume {
-    background: #E84A27;
-}
-
-#contact {
-    background: #1E1E1E;
-}
-
-/* Left section: UIUC logo + text */
-.navbar-left {
     display: flex;
+    background: #13294B;
+    width: 100%;
+    min-height: 100vh; /* Ensures full viewport height */
+    align-items: stretch; /* Ensures both sections stretch */
+    overflow: hidden; /* Prevents overflow into next section */
+}
+
+
+.home-left {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1); /* Adjust for transparency */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    height: 100vh; /* Ensures it stays within the home section */
+    max-height: 100vh; /* Prevents overflow */
+    position: relative;
+    overflow: hidden;
+}
+
+#home {
+    display: flex;
+    background: #13294B;
+    width: 100%;
+    height: 100vh; /* Ensures full screen height */
+    align-items: stretch; /* Ensures both sections stretch equally */
+}
+
+.home-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: -1; /* Places it behind content */
+    border-radius: 10px;
+}
+
+.profile-image {
+    height: 200px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.home-right {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.home-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: -1; /* Places it behind content */
+    border-radius: 10px;
+}
+
+.home-right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 93%;
+}
+
+.home-right-section {
+    width: 100%; /* Ensure it spans the full width */
+    text-align: left; /* Aligns text to the left */
+    padding-left: 20px; /* Adds left padding for better spacing */
+    margin-top: 30px; /* Ensures uniform space above each section */
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.home-right-section:first-child {
+    color: rgb(0, 255, 149);
+}
+
+/* Content alignment */
+.jobTitle {
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    display: flex;
+    align-items: center;
+    line-height: 24px;
+}
+
+.white-bar {
+    width: 2px;
+    height: 20px;
+    background-color: white;
+    display: flex;
+    align-self: center;
+    margin: 0 8px;
+}
+
+.degree-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 24px;
+}
+
+.degree-container a img {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+/* Section descriptions */
+.section-description {
+    font-size: 14px;
+    color: #ddd;
+    margin: 0;
+    padding: 5px 20px;
+    width: 93%;
+    max-width: 95%;
+    text-align: justify;
+}
+
+/* Education Section */
+.education-container {
+    font-size: 14px;
+    color: #ddd;
+    padding: 5px 20px;
+    max-width: 95%;
+    width: 93%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.education-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.education-row:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.education-left {
+    text-align: left;
+    flex-grow: 1;
+    min-width: 0;
+    white-space: normal;
+}
+
+.education-right {
+    text-align: right;
+    flex-grow: 1;
+    white-space: nowrap;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Skills Section */
+/* Skills Container */
+.skills-container {
+    width: 93%;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Each row */
+.skills-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Text on the left */
+.skills-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.7;
+    flex: 0 0 140px;
+    text-align: left;
+}
+
+/* White Vertical Bar */
+.skills-bar {
+    width: 2px;
+    height: 55px;
+    background-color: white;
+    flex-shrink: 0;
+}
+
+/* Two-column text layout */
+.skills-columns {
+    display: flex;
+    flex-wrap: wrap;  /* Allows text to wrap to the next line */
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-start; /* Aligns text properly */
+    max-width: 400px; /* Ensures text wraps within a defined space */
+}
+
+.skills-column {
+    flex: 0 1 45%; /* Adjusts width for wrapping */
+    text-align: left;
+    font-size: 14px;
+    color: white;
+    opacity: 0.8;
+    white-space: normal; /* Ensures text can wrap */
+}
+
+
+/* Projects Section */
+#projects {
+    background: #1E1E1E;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-/* UIUC Logo */
-.uiuc-logo {
-    height: 80px;
-    margin-right: 15px;
-}
-
-/* Name and Links container */
-.name-links {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-size: 18px;
-    gap: 5px;
-}
-
-/* Hovering behavior for LinkedIn and Email buttons */
-.name-links a:hover img {
-    transform: scale(1.2);
-    filter: drop-shadow(0px 0px 8px white);
-}
-
-/* Name Styling in navbar */
-.name-links span:first-child {
-    font-size: 26px;
+/* Projects Title */
+.projects-title {
+    font-size: 36px;
     font-weight: bold;
     color: white;
+    margin-bottom: 20px;
 }
 
-/* LinkedIn & Email icons */
-.name-links a {
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.name-links a img {
-    height: 30px;
-    vertical-align: middle;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Right section: Navigation buttons */
-.navbar-right {
+/* Navigation Buttons */
+.projects-nav {
     display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.project-btn.active {
+    background: white;
+    color: black;
+}
+
+.project-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Projects Slider Container */
+.projects-slider-container {
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Projects Slider */
+.projects-slider {
+    display: flex;
+    width: 300%; /* Ensures all sections are placed in a row */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Each project section */
+.projects-section {
+    display: none;  /* Hidden by default, but JS makes them visible */
+    flex-direction: column;
+    gap: 15px;
+    opacity: 1; /* Ensures they are visible when shown */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Projects Container (Ensures boxes are inside) */
+.projects-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-/* Navbar buttons */
-.nav-button {
-    background: transparent;
-    color: white;
-    padding: 12px 18px;
-    font-size: 18px;
-    font-weight: bold;
-    border: 2px solid white;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+/* Project Box */
+.project-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Hover effect */
-.nav-button:hover {
-    background: white;
-    color: black;
-    transform: scale(1.1);
+.project-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile Responsive Design */
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -162,4 +472,38 @@ body, html {
         width: 100%;
         font-size: 16px;
     }
+
+    #home {
+        flex-direction: column;
+    }
+
+    .home-left, .home-right {
+        flex: none;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-description,
+.education-container,
+.skills-container {
+    margin-bottom: 5px; /* Ensures equal spacing */
+}
+
+.home-right-section {
+    margin-top: 5px; /* Ensures uniform space above each section */
+    padding-bottom: 10px; /* Prevents sections from being too close */
 }

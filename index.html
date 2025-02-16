@@ -15,8 +15,8 @@
             <img src="img/UIUC-logo.gif" alt="UIUC-Logo" class="uiuc-logo">
             <div class="name-links">
                 <span>Yeonwook Park</span>
-                <span>UIUC Mechanical Engineering '25</span>
                 <div>
+                    <span class="jobTitle">Mechanical Engineer</span> <div class="white-bar"></div>
                     <a href="https://www.linkedin.com/in/yeonwookpark" target="_blank">
                         <img src="img/linkedin-icon.png" alt="LinkedIn">
                     </a>
@@ -39,14 +39,131 @@
     <!-- Main Sections -->
     <div class="scroll-container">
         <section id="home" class="section">
-            <h1>Welcome to My Website</h1>
-            <p>This is the home section where you can find an introduction.</p>
+            <div class="home-left">
+                <img src="img/yp11-headshot.jpg" alt="Profile Picture" class="profile-image">
+                <div class="home-text">
+                    <p>Mechanical Engineer</p>
+                    <p>UIUC Class of 2025</p>
+                    <p>Passionate about Design & Innovation</p>
+                </div>
+            </div>
+            <div class="home-right">
+                <div class="home-right-container">
+                    <div class="home-right-section">Welcome to My Portfolio</div>
+                        <div class="section-description">
+                            Yeonwook Park is a Mechanical Engineering senior at the University of Illinois Urbana-Champaign, 
+                            graduating in May 2025, with a minor in Computational Science and Engineering. 
+
+                            He has diverse experience in mechanical design, turbomachinery, and structural analysis, 
+                            gained through research, industry internships, and hands-on engineering projects. 
+
+                            Passionate about innovation and problem-solving, he seeks to apply his expertise in mechanical systems, 
+                            additive manufacturing, and energy solutions to tackle complex engineering challenges.
+                        </div>
+                    <div class="home-right-section">Education</div>
+                        <div class="education-container">
+                            <div class="education-row">
+                                <div class="education-left"><strong>University of Illinois Urbana-Champaign</strong></div>
+                                <div class="education-right">Expected: May 2025</div>
+                            </div>
+                            <div class="education-row">
+                                <div class="education-left">Bachelor of Science in Mechanical Engineering</div>
+                                <div class="education-right">GPA: 3.84/4.00</div>
+                            </div>
+                            <div class="education-row">
+                                <div class="education-left">Minor in Computational Science and Engineering</div>
+                                <div class="education-right"></div> <!-- Empty to maintain alignment -->
+                        </div>
+                    </div>
+                    <div class="home-right-section">Skills</div>
+                        <div class="skills-container">
+                            <div class="skills-row">
+                                <div class="skills-text">Digital Fabrication</div>
+                                <div class="skills-bar"></div>
+                                <div class="skills-columns">
+                                    <div class="skills-column">SOLIDWORKS </div>
+                                    <div class="skills-column">Autodesk Fusion360</div>
+                                    <div class="skills-column">Autodesk Inventor</div>
+                                    <div class="skills-column">PTC Creo Parametric</div>
+                                </div>
+                            </div>
+                            <div class="skills-row">
+                                <div class="skills-text">CAE</div>
+                                <div class="skills-bar"></div>
+                                <div class="skills-columns">
+                                    <div class="skills-column">Abaqus CAE</div>
+                                    <div class="skills-column">Ansys Fluent</div>
+                                    <div class="skills-column">Ansys Mechanical</div>
+                                </div>
+                            </div>
+                            <div class="skills-row">
+                                <div class="skills-text">Programming</div>
+                                <div class="skills-bar"></div>
+                                <div class="skills-columns">
+                                    <div class="skills-column">Python</div>
+                                    <div class="skills-column">MATLAB</div>
+                                </div>
+                            </div>
+                            <div class="skills-row">
+                                <div class="skills-text">Hands-On</div>
+                                <div class="skills-bar"></div>
+                                <div class="skills-columns">
+                                    <div class="skills-column">CNC Machining</div>
+                                    <div class="skills-column">Welding</div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
         </section>
 
-        <section id="portfolio" class="section">
-            <h1>Portfolio</h1>
-            <p>Here are some of my projects and work samples.</p>
+        <section id="projects" class="section">
+            <h1 class="projects-title">Projects</h1>
+
+            <!-- Navigation Buttons -->
+            <div class="projects-nav">
+                <button class="project-btn active" onclick="showProjectSection(0)">Professional/Research</button>
+                <button class="project-btn" onclick="showProjectSection(1)">School</button>
+                <button class="project-btn" onclick="showProjectSection(2)">Personal</button>
+            </div>
+        
+            <!-- Sliding Container for Sections -->
+            <div class="projects-container">
+                <div id="professional-projects" class="projects-section">
+                    <div class="project-box">
+                        <h3>Professional Project 1</h3>
+                        <p>Description of a professional or research-related project.</p>
+                    </div>
+                    <div class="project-box">
+                        <h3>Professional Project 2</h3>
+                        <p>Description of another professional project.</p>
+                    </div>
+                </div>
+            
+                <div id="school-projects" class="projects-section" style="display: none;">
+                    <div class="project-box">
+                        <h3>School Project 3</h3>
+                        <p>Description of a school-related project.</p>
+                    </div>
+                    <div class="project-box">
+                        <h3>School Project 4</h3>
+                        <p>Description of another school project.</p>
+                    </div>
+                </div>
+            
+                <div id="personal-projects" class="projects-section" style="display: none;">
+                    <div class="project-box">
+                        <h3>Personal Project 1</h3>
+                        <p>Description of a personal side project.</p>
+                    </div>
+                    <div class="project-box">
+                        <h3>Personal Project 2</h3>
+                        <p>Description of another personal project.</p>
+                    </div>
+                </div>
+            </div>
         </section>
+        
 
         <section id="resume" class="section">
             <h1>Resume</h1>
