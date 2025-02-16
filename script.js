@@ -45,26 +45,38 @@ document.addEventListener("DOMContentLoaded", function () {
         function showProjectSection(sectionId) {
             const allSections = document.querySelectorAll(".projects-section");
             const selectedSection = document.getElementById(sectionId);
-
+        
             // If section is already visible, do nothing
             if (selectedSection.style.display === "flex") return;
-
-            // Hide all sections smoothly
+        
+            // Hide all sections with a fade-out animation
             allSections.forEach(section => {
                 if (section !== selectedSection) {
-                    gsap.to(section, { opacity: 0, duration: 0.3, onComplete: () => {
-                        section.style.display = "none"; 
-                    }});
+                    gsap.to(section, {
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: "power2.inOut",
+                        onComplete: () => {
+                            section.style.display = "none";
+                        }
+                    });
                 }
             });
-
-            // Show the selected section smoothly
+        
+            // Show the selected section with a fade-in animation
             selectedSection.style.display = "flex"; // Ensure it appears before animation
-            gsap.fromTo(selectedSection, { opacity: 0 }, { opacity: 1, duration: 0.5 });
-
+            gsap.fromTo(selectedSection, 
+                { opacity: 0 }, // Start invisible
+                { 
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "power2.inOut"
+                }
+            );
+        
             // Update active button styling
             document.querySelectorAll(".project-btn").forEach(btn => btn.classList.remove("active"));
-            document.querySelector(`button[onclick="showProjectSection('${sectionId}')"]`).classList.add("active");
+            document.querySelector(`button[data-target="${sectionId}"]`).classList.add("active");
         }
 
         // Set default active section to "professional-projects"
@@ -77,9 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // Assign click events to buttons
         document.querySelectorAll(".project-btn").forEach(button => {
             button.addEventListener("click", function () {
-                const sectionId = this.getAttribute("onclick").match(/'([^']+)'/)[1]; // Extract section ID
+                const sectionId = this.getAttribute("data-target");
                 showProjectSection(sectionId);
             });
         });
     }
 });
+

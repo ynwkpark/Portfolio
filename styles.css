@@ -14,7 +14,7 @@ body, html {
 .navbar {
     width: 100%;
     height: 100px;
-    background: rgba(0, 0, 0, 0.9);
+    background: linear-gradient(to right, #13294B, #FF5F05);
     border-bottom: 4px solid white;
     position: fixed;
     top: 0;
@@ -94,15 +94,18 @@ body, html {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 0; /* Ensure no extra margin */
+    padding: 0; /* Ensure no extra padding */
 }
 
 .section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* Ensure sections take up at least the full viewport height */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    justify-content: flex-start; /* Align content to the top */
+    padding-top: 40px; /* Adjust for navbar height */
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -117,57 +120,8 @@ body, html {
     display: flex;
     background: #13294B;
     width: 100%;
-    min-height: 100vh; /* Ensures full viewport height */
-    align-items: stretch; /* Ensures both sections stretch */
-    overflow: hidden; /* Prevents overflow into next section */
-}
-
-
-.home-left {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.1); /* Adjust for transparency */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-    height: 100vh; /* Ensures it stays within the home section */
-    max-height: 100vh; /* Prevents overflow */
-    position: relative;
-    overflow: hidden;
-}
-
-#home {
-    display: flex;
-    background: #13294B;
-    width: 100%;
     height: 100vh; /* Ensures full screen height */
     align-items: stretch; /* Ensures both sections stretch equally */
-}
-
-.home-left::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
-    z-index: -1; /* Places it behind content */
-    border-radius: 10px;
-}
-
-.profile-image {
-    height: 200px;
-    border-radius: 10%;
-    margin-bottom: 20px;
-}
-
-.home-text p {
-    margin: 5px 0;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 .home-right {
@@ -188,7 +142,48 @@ body, html {
     background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
     z-index: -1; /* Places it behind content */
     border-radius: 10px;
+    overflow-y: auto;
 }
+
+.home-left {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.0); /* Adjust for transparency */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    height: 100vh; /* Ensures it stays within the home section */
+    max-height: 100vh; /* Prevents overflow */
+    position: relative;
+    overflow-y: auto;
+}
+
+.home-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: -1; /* Places it behind content */
+    border-radius: 10px;
+}
+
+.profile-image {
+    height: auto;
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 .home-right-container {
     display: flex;
@@ -196,6 +191,7 @@ body, html {
     align-items: flex-start;
     width: 93%;
 }
+
 
 .home-right-section {
     width: 100%; /* Ensure it spans the full width */
@@ -298,21 +294,21 @@ body, html {
     justify-content: flex-end;
 }
 
-/* Skills Section */
 /* Skills Container */
 .skills-container {
-    width: 93%;
+    width: 90%;
     padding: 5px 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
 
 /* Each row */
 .skills-row {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 /* Text on the left */
@@ -328,7 +324,7 @@ body, html {
 /* White Vertical Bar */
 .skills-bar {
     width: 2px;
-    height: 55px;
+    height: 40px;
     background-color: white;
     flex-shrink: 0;
 }
@@ -340,12 +336,13 @@ body, html {
     gap: 10px;
     flex: 1;
     justify-content: flex-start; /* Aligns text properly */
-    max-width: 400px; /* Ensures text wraps within a defined space */
+    max-width: 3000px; /* Ensures text wraps within a defined space */
 }
 
 .skills-column {
-    flex: 0 1 45%; /* Adjusts width for wrapping */
-    text-align: left;
+    flex: 1 1 auto; /* Adjusts width for wrapping */
+    text-align: center;
+    max-width: 450px;
     font-size: 14px;
     color: white;
     opacity: 0.8;
@@ -356,15 +353,14 @@ body, html {
 /* Projects Section */
 #projects {
     background: #1E1E1E;
-    padding-top: 80px;
-    padding-bottom: 60px;
+    padding-top: 20px; /* Reduced padding to bring content closer to the buttons */
+    padding-bottom: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Projects Title */
 .projects-title {
     font-size: 36px;
     font-weight: bold;
@@ -372,11 +368,10 @@ body, html {
     margin-bottom: 20px;
 }
 
-/* Navigation Buttons */
 .projects-nav {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space between buttons and project sections */
 }
 
 .project-btn {
@@ -400,41 +395,24 @@ body, html {
     background: rgba(255, 255, 255, 0.4);
 }
 
-/* Projects Slider Container */
-.projects-slider-container {
-    width: 100%;
-    max-width: 900px;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Projects Slider */
-.projects-slider {
-    display: flex;
-    width: 300%; /* Ensures all sections are placed in a row */
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Each project section */
-.projects-section {
-    display: none;  /* Hidden by default, but JS makes them visible */
-    flex-direction: column;
-    gap: 15px;
-    opacity: 1; /* Ensures they are visible when shown */
-    transition: opacity 0.5s ease-in-out;
-}
-
-/* Projects Container (Ensures boxes are inside) */
 .projects-container {
     width: 90%;
     max-width: 800px;
-    margin: auto;
+    margin: 0 auto; /* Center the container horizontally */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px; /* Space between project boxes */
 }
 
-/* Project Box */
+.projects-section {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 15px; /* Space between project boxes within a section */
+    opacity: 1; /* Ensures they are visible when shown */
+    transition: opacity 0.5s ease-in-out;
+    margin-top: 0; /* Ensure no extra margin pushes the section down */
+}
+
 .project-box {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
@@ -450,8 +428,6 @@ body, html {
     transform: scale(1.02);
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -481,29 +457,56 @@ body, html {
         flex: none;
         width: 100%;
     }
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.section-description,
-.education-container,
-.skills-container {
-    margin-bottom: 5px; /* Ensures equal spacing */
+/* Related Coursework Section */
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 15px; /* Space between boxes */
+    width: 100%;
+    margin-top: 20px; /* Space above the grid */
 }
 
-.home-right-section {
-    margin-top: 5px; /* Ensures uniform space above each section */
-    padding-bottom: 10px; /* Prevents sections from being too close */
+.coursework-box {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px; /* Rounded corners */
+    height: 80px; /* Adjust height as needed */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    overflow: hidden; /* Ensure rounded corners work */
+}
+
+.coursework-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Low opacity overlay */
+    z-index: 1;
+}
+
+.coursework-text {
+    position: relative;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2; /* Ensure text is above the overlay */
+    text-align: center; /* Center text horizontally */
+}
+
+.coursework-box:hover::before {
+    background: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay on hover */
+}
+
+.coursework-box:hover .coursework-text {
+    transform: scale(1.1); /* Slightly enlarge text on hover */
+    transition: transform 0.3s ease-in-out;
 }

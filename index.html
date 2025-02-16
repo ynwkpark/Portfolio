@@ -30,7 +30,7 @@
         <!-- Right Side: Navigation Buttons -->
         <div class="navbar-right">
             <button class="nav-button" data-target="home">Home</button>
-            <button class="nav-button" data-target="portfolio">Portfolio</button>
+            <button class="nav-button" data-target="projects">Projects</button>
             <button class="nav-button" data-target="resume">Resume</button>
             <button class="nav-button" data-target="contact">Contact</button>
         </div>
@@ -81,38 +81,82 @@
                                 <div class="skills-text">Digital Fabrication</div>
                                 <div class="skills-bar"></div>
                                 <div class="skills-columns">
-                                    <div class="skills-column">SOLIDWORKS </div>
-                                    <div class="skills-column">Autodesk Fusion360</div>
-                                    <div class="skills-column">Autodesk Inventor</div>
-                                    <div class="skills-column">PTC Creo Parametric</div>
+                                    <div class="skills-row">
+                                        <div class="skills-column">SOLIDWORKS</div>
+                                        <div class="skills-column">Autodesk Fusion360</div>
+                                        <div class="skills-column">Autodesk Inventor</div>
+                                        <div class="skills-column">PTC Creo Parametric</div>
+                                        <div class="skills-column">Autodesk MoldFlow</div>
+                                        <div class="skills-column">Ultimaker Cura</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="skills-row">
                                 <div class="skills-text">CAE</div>
                                 <div class="skills-bar"></div>
-                                <div class="skills-columns">
-                                    <div class="skills-column">Abaqus CAE</div>
-                                    <div class="skills-column">Ansys Fluent</div>
-                                    <div class="skills-column">Ansys Mechanical</div>
-                                </div>
+                                    <div class="skills-columns">
+                                        <div class="skills-row">
+                                            <div class="skills-column">Abaqus CAE</div>
+                                            <div class="skills-column">Ansys Fluent</div>
+                                            <div class="skills-column">Ansys Mechanical</div>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="skills-row">
                                 <div class="skills-text">Programming</div>
                                 <div class="skills-bar"></div>
-                                <div class="skills-columns">
-                                    <div class="skills-column">Python</div>
-                                    <div class="skills-column">MATLAB</div>
-                                </div>
+                                    <div class="skills-columns">
+                                        <div class="skills-row">
+                                            <div class="skills-column">Abaqus CAE</div>
+                                            <div class="skills-column">Ansys Fluent</div>
+                                            <div class="skills-column">Ansys Mechanical</div>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="skills-row">
                                 <div class="skills-text">Hands-On</div>
                                 <div class="skills-bar"></div>
                                 <div class="skills-columns">
-                                    <div class="skills-column">CNC Machining</div>
-                                    <div class="skills-column">Welding</div>
+                                    <div class="skills-row">
+                                        <div class="skills-column">Abaqus CAE</div>
+                                        <div class="skills-column">Ansys Fluent</div>
+                                        <div class="skills-column">Ansys Mechanical</div>
+                                        <div class="skills-column">Ansys Mechanical</div>
+                                        <div class="skills-column">Ansys Mechanical</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    <div class="home-right-section">Related Coursework</div>
+                    <div class="coursework-grid">
+                        <!-- Row 1 -->
+                        <div class="coursework-box" style="background-image: url('img/coursework1.jpg');">
+                            <div class="coursework-text">Numerical Thermo-Fluid Mechanics (CFD)</div>
+                        </div>
+                        <div class="coursework-box" style="background-image: url('img/coursework2.jpg');">
+                            <div class="coursework-text">Finite Element Analysis (FEA)</div>
+                        </div>
+                        <div class="coursework-box" style="background-image: url('img/coursework3.jpg');">
+                            <div class="coursework-text">Numerical Analysis</div>
+                        </div>
+                        <div class="coursework-box" style="background-image: url('img/coursework4.jpg');">
+                            <div class="coursework-text">Course 4</div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="coursework-box" style="background-image: url('img/coursework5.jpg');">
+                            <div class="coursework-text">Course 5</div>
+                        </div>
+                        <div class="coursework-box" style="background-image: url('img/coursework6.jpg');">
+                            <div class="coursework-text">Course 6</div>
+                        </div>
+                        <div class="coursework-box" style="background-image: url('img/coursework7.jpg');">
+                            <div class="coursework-text">Course 7</div>
+                        </div>
+                        <div class="coursework-box" style="background-image: url('img/coursework8.jpg');">
+                            <div class="coursework-text">Course 8</div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -122,12 +166,12 @@
 
             <!-- Navigation Buttons -->
             <div class="projects-nav">
-                <button class="project-btn active" onclick="showProjectSection(0)">Professional/Research</button>
-                <button class="project-btn" onclick="showProjectSection(1)">School</button>
-                <button class="project-btn" onclick="showProjectSection(2)">Personal</button>
+                <button class="project-btn active" data-target="professional-projects">Professional/Research</button>
+                <button class="project-btn" data-target="school-projects">School</button>
+                <button class="project-btn" data-target="personal-projects">Personal</button>
             </div>
-        
-            <!-- Sliding Container for Sections -->
+
+            <!-- Project Sections -->
             <div class="projects-container">
                 <div id="professional-projects" class="projects-section">
                     <div class="project-box">
@@ -138,19 +182,23 @@
                         <h3>Professional Project 2</h3>
                         <p>Description of another professional project.</p>
                     </div>
+                    <div class="project-box">
+                        <h3>Professional Project 3</h3>
+                        <p>Description of another professional project.</p>
+                    </div>
                 </div>
-            
+
                 <div id="school-projects" class="projects-section" style="display: none;">
                     <div class="project-box">
-                        <h3>School Project 3</h3>
+                        <h3>School Project 1</h3>
                         <p>Description of a school-related project.</p>
                     </div>
                     <div class="project-box">
-                        <h3>School Project 4</h3>
+                        <h3>School Project 2</h3>
                         <p>Description of another school project.</p>
                     </div>
                 </div>
-            
+
                 <div id="personal-projects" class="projects-section" style="display: none;">
                     <div class="project-box">
                         <h3>Personal Project 1</h3>
@@ -160,10 +208,13 @@
                         <h3>Personal Project 2</h3>
                         <p>Description of another personal project.</p>
                     </div>
+                    <div class="project-box">
+                        <h3>Personal Project 2</h3>
+                        <p>Description of another personal project.</p>
+                    </div>
                 </div>
             </div>
         </section>
-        
 
         <section id="resume" class="section">
             <h1>Resume</h1>
@@ -178,6 +229,5 @@
 
     <!-- Link to External JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
